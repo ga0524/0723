@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="timer-container">
+        <div style="font-size:1.5rem; font-weight:bold; color:#7c3aed; margin-bottom:10px; letter-spacing:2px; text-shadow: 1px 1px 8px #e0c3fc;">오채연 보고싶다</div>
+        <div id="date" style="font-size:1.1rem; margin-bottom:10px; color:#5e35b1; font-weight:500;"></div>
+        <div class="progress-outer">
+            <div class="progress-inner" id="progress-bar"></div>
+        </div>
+        <h1 id="timer" style="margin-top:18px; margin-bottom:18px; font-size:3.2rem; color:#512da8; text-shadow: 2px 2px 12px #ede7f6;">00:00:00</h1>
+        <div class="buttons">
+            <button id="start">시작</button>
+            <button id="pause">일시정지</button>
+            <button id="reset">리셋</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // 오늘 날짜를 yyyy-mm-dd 형식으로 표시
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        document.getElementById('date').textContent = `${yyyy}-${mm}-${dd}`;
+    </script>
+</body>
+</html>
